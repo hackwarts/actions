@@ -1,0 +1,55 @@
+name: health check for microservices
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/4 * * * *"
+  
+jobs:
+  check-ms-auth:
+    name: make a request to check health of ms-auth
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: send request
+        run: |
+          chmod +x health/check.sh
+          ./health/check.sh
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          ENDPOINT: https://auth-skillwise.onrender.com/ms-auth/internal/health/check
+
+  check-ms-user:
+    name: make a request to check health of ms-user
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: send request
+        run: |
+          chmod +x health/check.sh
+          ./health/check.sh
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          ENDPOINT: https://user-skillwise.onrender.com/ms-user/internal/health/check
+  
+  check-ms-vacancy:
+    name: make a request to check health of ms-vacancy
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: send request
+        run: |
+          chmod +x health/check.sh
+          ./health/check.sh
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          ENDPOINT: https://vacancy-skillwise.onrender.com/ms-vacancy/internal/health/check
