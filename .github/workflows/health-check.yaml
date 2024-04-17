@@ -20,7 +20,7 @@ jobs:
           ./health/check.sh
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          ENDPOINT: https://auth-skillwise.onrender.com/ms-auth/internal/health/check
+          ENDPOINT: https://auth-hackwarts.onrender.com/ms-auth/internal/health/check
 
   check-ms-user:
     name: make a request to check health of ms-user
@@ -36,7 +36,7 @@ jobs:
           ./health/check.sh
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          ENDPOINT: https://user-skillwise.onrender.com/ms-user/internal/health/check
+          ENDPOINT: https://user-hackwarts.onrender.com/ms-user/internal/health/check
   
   check-ms-vacancy:
     name: make a request to check health of ms-vacancy
@@ -52,7 +52,7 @@ jobs:
           ./health/check.sh
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          ENDPOINT: https://vacancy-skillwise.onrender.com/ms-vacancy/internal/health/check
+          ENDPOINT: https://vacancy-hackwarts.onrender.com/ms-vacancy/internal/health/check
 
   check-ms-message:
     name: make a request to check health of ms-message
@@ -68,7 +68,7 @@ jobs:
           ./health/check.sh
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          ENDPOINT: https://message-skillwise.onrender.com/ms-message/internal/health/check
+          ENDPOINT: https://message-hackwarts.onrender.com/ms-message/internal/health/check
   
   check-ms-otp:
     name: make a request to check health of ms-otp
@@ -84,4 +84,4 @@ jobs:
           ./health/check.sh
         env:
           API_KEY: ${{ secrets.API_KEY }}
-          ENDPOINT: https://otp-skillwise.onrender.com/ms-otp/internal/health/check
+          ENDPOINT: https://otp-hackwarts.onrender.com/ms-otp/internal/health/check
